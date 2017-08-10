@@ -81,6 +81,7 @@ export default class TextField extends PureComponent {
 
 		keyboardType: PropTypes.string,
 		returnKeyType: PropTypes.string,
+	  	options: PropTypes.object,
 
     containerStyle: (ViewPropTypes || View.propTypes).style,
   };
@@ -319,6 +320,7 @@ export default class TextField extends PureComponent {
       containerStyle,
 			keyboardType,
 			returnKeyType,
+	    		options,
       ...props
     } = this.props;
 
@@ -481,6 +483,7 @@ export default class TextField extends PureComponent {
               ref={this.updateRef}
 			        keyboardType={keyboardType}
 			        returnKeyType={returnKeyType}
+				options={options}
             />
 
             {this.renderAffix('suffix', active, focused)}
