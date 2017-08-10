@@ -79,9 +79,8 @@ export default class TextField extends PureComponent {
     prefix: PropTypes.string,
     suffix: PropTypes.string,
 
-		keyboardType: PropTypes.string,
-		returnKeyType: PropTypes.string,
-	  	options: PropTypes.object,
+    keyboardType: PropTypes.string,
+    returnKeyType: PropTypes.string,
 
     containerStyle: (ViewPropTypes || View.propTypes).style,
   };
@@ -318,9 +317,8 @@ export default class TextField extends PureComponent {
       textColor,
       errorColor,
       containerStyle,
-			keyboardType,
-			returnKeyType,
-	    		options,
+      keyboardType,
+      returnKeyType,
       ...props
     } = this.props;
 
@@ -481,9 +479,8 @@ export default class TextField extends PureComponent {
               onBlur={this.onBlur}
               value={value}
               ref={this.updateRef}
-			        keyboardType={keyboardType}
-			        returnKeyType={returnKeyType}
-				options={options}
+              keyboardType={keyboardType}
+              returnKeyType={returnKeyType}
             />
 
             {this.renderAffix('suffix', active, focused)}
