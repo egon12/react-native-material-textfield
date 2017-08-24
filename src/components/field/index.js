@@ -89,6 +89,7 @@ export default class TextField extends PureComponent {
     super(props);
 
     this.onBlur = this.onBlur.bind(this);
+    this.onEndEditing = this.onEndEditing.bind(this);
     this.onFocus = this.onFocus.bind(this);
     this.onPress = this.focus.bind(this);
     this.onChange = this.onChange.bind(this);
@@ -214,6 +215,14 @@ export default class TextField extends PureComponent {
     }
 
     this.setState({ focused: false });
+  }
+
+  onEndEditing(event) {
+    let { onEndEditing } = this.props;
+
+    if ('function' === typeof onEndEditing) {
+      onEndEditing(event);
+    }
   }
 
   onChange(event) {
@@ -477,6 +486,7 @@ export default class TextField extends PureComponent {
               onContentSizeChange={this.onContentSizeChange}
               onFocus={this.onFocus}
               onBlur={this.onBlur}
+              onEndEditing={this.onEndEditing}
               value={value}
               ref={this.updateRef}
               keyboardType={keyboardType}
